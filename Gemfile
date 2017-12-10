@@ -8,7 +8,7 @@ end
 gem 'awesome_rails_console'
 gem 'jquery-rails'
 gem 'devise'
-
+gem 'font-awesome-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
