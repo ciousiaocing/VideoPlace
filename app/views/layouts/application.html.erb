@@ -20,8 +20,10 @@
 
   <body>
     <%= render "common/navbar" %>
-    <div class="container">
-      <%= yield %>
+    <div class="row">
+      <div class="col m10 offset-m1">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def admin_required
     if !current_user.admin?
-      redirect_to admin_videos_path
+      redirect_to videos_path
     end
   end
 end
