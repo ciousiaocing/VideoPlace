@@ -1,0 +1,28 @@
+<h1>Video</h1>
+
+<%= link_to new_admin_video_path, class: "btn-floating btn-large waves-effect waves-light red" do %>
+  <i class="mdi-content-add"></i>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wistia</th>
+      <th>Title</th>
+      <th>description</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.wistia %></td>
+        <td><%= video.title %></td>
+        <td><%= video.description %></td>
+        <td><%= link_to "Edit", admin_edit_video_path %></td>
+        <td><%= link_to "Destroy", admin_videos_path, method: :delete, data: { confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

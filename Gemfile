@@ -9,7 +9,6 @@ gem 'awesome_rails_console'
 gem 'jquery-rails'
 gem 'devise'
 
-gem 'materialize-sass'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
