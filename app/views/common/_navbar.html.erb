@@ -16,7 +16,7 @@
           </a>
 
           <!-- Dropdown Structure -->
-          <ul id="dropdown1" class="dropdown-content" style="top: 65px;">
+          <ul id="dropdown1" class="dropdown-content">
             <% if current_user.admin? %>
               <li><%= link_to("Admin Panel", admin_videos_path) %></li>
             <% end %>
@@ -36,6 +36,7 @@
 <script>
   $(document).ready(function(){
     $('.dropdown-button').dropdown({
+      // dropdown-content從按鈕下開始
       belowOrigin: true
     });
   });

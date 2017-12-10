@@ -33,7 +33,7 @@ class Admin::VideosController < ApplicationController
 
   def destroy
     @video = Video.find_by(params[:id])
-    @video.delete
+    @video.destroy
     redirect_to admin_videos_path
   end
 
