@@ -1,22 +1,13 @@
 <h1>Video列表</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Wistia</th>
-      <th>Title</th>
-      <th>description</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= link_to video.wistia, video_path(video) %></td>
-        <td><%= video.title %></td>
-        <td><%= video.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class="collapsible" data-collapsible="accordion">
+  <% @videos.each do |video| %>
+    <li>
+      <div class="collapsible-header">
+        <i class="mdi-av-my-library-books"></i>
+        <%= link_to video.title, video %>
+      </div>
+      <div class="collapsible-body"><p><%= video.description %></p></div>
+    </li>
+  <% end %>
+</ul>
