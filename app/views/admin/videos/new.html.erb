@@ -2,6 +2,34 @@
 
 <div class="card">
   <div class="card-content">
-    <%= render 'form', video: @video %>
+
+    <%= form_for [:admin, @video] do |f| %>
+      <div class="input-field">
+        <%= f.text_field :wistia, placeholder: 'Link', length: '10' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.text_field :title, placeholder: 'Title', length: '20' %>
+      </div>
+
+      <div class="input-field">
+        <%= f.text_area :description, placeholder: 'Description', length: '800', class: 'materialize-textarea'  %>
+      </div>
+
+      <div class="file-field input-field col s12">
+        <div class="btn-flat img-button col m1">
+          <span><i class="material-icons large" style="font-size: 3rem;">cloud_upload</i></span>
+          <%= f.file_field :image, as: :file %>
+        </div>
+        <div class="file-path-wrapper col m11">
+          <%= text_field_tag nil, (f.object.image.original_filename unless f.object.image.blank?), {id: nil, class: 'file-path validate', placeholder: 'Your filename here!', style: 'margin-left: 0px;width: 40%;'} %>
+        </div>
+      </div>
+
+      <button type="submit" name="button" class="btn waves-effect waves-light">Submit</button>
+      <a href="<%= admin_videos_path %>" class="btn waves-effect waves-light">Back</a>
+    <% end %>
+
+
   </div>
 </div>

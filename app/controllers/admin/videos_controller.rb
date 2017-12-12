@@ -40,7 +40,7 @@ class Admin::VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:wistia, :description, :title)
+    params.require(:video).permit(:wistia, :description, :title, :image)
   end
 
 end

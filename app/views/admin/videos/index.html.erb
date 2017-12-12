@@ -17,7 +17,7 @@
   <tbody>
     <% @videos.each do |video| %>
       <tr>
-        <td><%= link_to video.wistia, video_path(video) %></td>
+        <td><%= link_to video.wistia, video %></td>
         <td><%= video.title %></td>
         <td><%= video.description %></td>
         <td><%= link_to "Edit", edit_admin_video_path(video) %></td>
