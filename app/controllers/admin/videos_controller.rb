@@ -19,11 +19,11 @@ class Admin::VideosController < ApplicationController
   end
 
   def edit
-    @video = Video.find_by(params[:id])
+    @video = Video.find_by(id: params[:id])
   end
 
   def update
-    @video = Video.find_by(params[:id])
+    @video = Video.find_by(id: params[:id])
     if @video.update(video_params)
       redirect_to admin_videos_path
     else
