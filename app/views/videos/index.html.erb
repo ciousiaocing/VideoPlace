@@ -15,9 +15,17 @@
       </div>
       <div class="card-action">
         <%= link_to video.title, video_path(video) %>
-        <%= link_to "#", class: "right" do %>
-          <i class="material-icons love-color small">favorite</i>
+
+        <% if current_user && current_user.favorites?(video) %>
+          <%= link_to discollect_video_path(video), class: "right", method: :post do %>
+            <i class="material-icons small love-color">favorite</i>
+          <% end %>
+        <% else %>
+          <%= link_to collect_video_path(video), class: "right", method: :post do %>
+            <i class="material-icons small love-color-change">favorite_border</i>
+          <% end %>
         <% end %>
+
       </div>
     </div>
   </div>
