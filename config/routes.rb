@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :videos
+  resources :videos do
+    member do
+      post :collect
+      post :discollect
+    end
+  end
 
   root "videos#index"
 
