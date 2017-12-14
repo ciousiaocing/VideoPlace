@@ -17,14 +17,14 @@
         <button class="btn btn-primary" onclick="setPlaySpeed(1.25)">1.25x</button>
         <button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
         <button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
-<br>
+
         <% if current_user && current_user.favorites?(@video) %>
           <%= link_to discollect_video_path(@video), class: "right", method: :post do %>
-            <i class="material-icons small">favorite</i>
+            <i class="material-icons small love-color">favorite</i>
           <% end %>
         <% else %>
           <%= link_to collect_video_path(@video), class: "right", method: :post do %>
-            <i class="material-icons small">favorite-border</i>
+            <i class="material-icons small love-color-change">favorite_border</i>
           <% end %>
         <% end %>
 

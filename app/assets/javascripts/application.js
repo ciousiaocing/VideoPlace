@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.love-color').click(function(){
-    $(this).toggleClass("change");
-  });
+  // $('.love-color').click(function(){
+  //   $(this).toggleClass("change");
+  // });
 })
