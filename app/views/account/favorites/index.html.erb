@@ -1,0 +1,25 @@
+<h2>My Favorite Videos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Remove Favorite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |v| %>
+      <tr>
+        <td>
+            <%= link_to video_path(v) do %>
+              <% if v.image.present? %>
+                <%= image_tag(v.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+            <%= v.title %></td>
+        <td><%= link_to("Unfavorite", discollect_video_path(v), method: :post) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

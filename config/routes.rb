@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :favorites
+  end
+
   root "videos#index"
 
   namespace :admin do

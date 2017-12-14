@@ -20,7 +20,7 @@
             <% if current_user.admin? %>
               <li><%= link_to("Admin Panel", admin_videos_path) %></li>
             <% end %>
-            <li><a href="#!">我的收藏</a></li>
+            <li><%= link_to "我的收藏", account_favorites_path %></li>
             <li><a href="#!">我的留言</a></li>
             <li class="divider"></li>
             <li><%= link_to "登出", destroy_user_session_path, method: :delete %></li>
