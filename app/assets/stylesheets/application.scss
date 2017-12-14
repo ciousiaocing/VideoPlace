@@ -27,6 +27,9 @@ i.love-color-change {
 a.delete-favorite {
   background-color: #ef5350;
 }
+a.delete-favorite:hover {
+  background-color: #e57373;
+}
 
 //account/favorite table highlight
 tbody.highligh tr:hover {
