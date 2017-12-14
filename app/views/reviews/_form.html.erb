@@ -1,0 +1,10 @@
+<%= form_for [@video, @video.reviews.build] do |f|%>
+
+  <div class="input-field">
+      <%= f.text_area :content, class: "form-control" %>
+  </div>
+ <br>
+  <div class="reviews-form">
+    <%= f.submit "Add a Review", class: "btn btn-primary pull-right" %>
+  </div>
+<% end %>

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
       post :collect
       post :discollect
     end
+    resources :reviews
   end
 
   namespace :account do
     resources :favorites
+    resources :reviews
   end
 
   root "videos#index"

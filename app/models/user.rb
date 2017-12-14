@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_videos, through: :favorites, source: :video
 
+  has_many :reviews
+
   def admin?
     is_admin
   end
