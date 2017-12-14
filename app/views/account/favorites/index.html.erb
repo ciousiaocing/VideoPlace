@@ -1,24 +1,37 @@
+<style>
+tbody.highligh tr:hover {
+  background: #f5f5f5;
+}
+</style>
 <h2>My Favorite Videos</h2>
-<table>
+<table class="centered">
   <thead>
     <tr>
-      <th>#</th>
-      <th>Remove Favorite</th>
+      <th>影片標題</th>
+      <th>影片描述</th>
+      <th>你的收藏</th>
+      <th>刪除收藏</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="highlight">
     <% @videos.each do |v| %>
       <tr>
+        <td><%= v.title %></td>
+        <td><%= v.description %></td>
         <td>
-            <%= link_to video_path(v) do %>
-              <% if v.image.present? %>
-                <%= image_tag(v.image.thumb.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-              <% end %>
+          <%= link_to video_path(v) do %>
+            <% if v.image.present? %>
+              <%= image_tag(v.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
-            <%= v.title %></td>
-        <td><%= link_to("Unfavorite", discollect_video_path(v), method: :post) %></td>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to discollect_video_path(v), class: "btn btn-floating pulse delete-favorite", method: :post do %>
+            <i class="material-icons small">delete</i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
