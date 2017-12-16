@@ -13,19 +13,3 @@
 //= require rails-ujs
 //= require jquery
 //= require_tree .
-
-$(document).ready(function(){
-  // $('.love-color').click(function(){
-  //   $(this).toggleClass("change");
-  // });
-
-  function indexpage(
-    $(window).scroll(function(){
-      if($(this).scrollTop() < 420){
-        $('#navbar').addClass('index_navbar_bgcolor')
-      }else {
-        $('#navbar').removeClass('index_navbar_bgcolor')
-      }
-    })
-  );
-})
