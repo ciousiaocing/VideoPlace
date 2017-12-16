@@ -51,8 +51,8 @@ Video.create!(wistia: "8ooc2jvwoo",
 )
 
 Video.create!(wistia: "hu3msaqtpo",
-  title: "fight-2",
-  description: "fight-",
+  title: "fight-3",
+  description: "fight-3",
   image: open("app/assets/images/fight2.png")
 )
 
