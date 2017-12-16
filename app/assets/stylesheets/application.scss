@@ -31,9 +31,16 @@ a.delete-favorite:hover {
   background-color: #e57373;
 }
 
-//tabs-color
-ul.tabs-color {
-  background-color: #546E7A;
+//review-delete-showpage
+div.review-delete-showpage a {
+  top: 3px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  &>i {
+    font-size: 1.4rem;
+    line-height: 30px;
+  }
 }
 
 //iframe

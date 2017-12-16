@@ -13,13 +13,15 @@
     </p>
 </div>
 <br>
-<br>
 
-  <div class="review-delete">
+  <div class="review-delete review-delete-showpage">
   <% if review.user == current_user %>
- <%= link_to("Delete", video_review_path(review.video, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+    <%= link_to video_review_path(review.video, review), class: "btn btn-floating pulse delete-favorite right", method: :delete, data: { confirm: "Are you sure?"} do %>
+      <i class="material-icons small">delete</i>
+    <% end %>
   <% end %>
+
   <br>
-  <hr style="margin-top: 22px;">
+  <hr style="margin-top: 20px;">
 
   </div>
