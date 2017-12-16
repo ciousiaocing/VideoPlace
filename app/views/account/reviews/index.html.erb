@@ -1,6 +1,6 @@
 <div class="col m12">
 
-  <h2 class="text-center"> 我發表過的評論 </h2>
+  <h2 class="text-center"> My Reviews </h2>
 
   <table class="table">
     <thead>
@@ -8,18 +8,21 @@
         <th> Content </th>
         <th> Video Name </th>
         <th> Last Update </th>
-        <th colspan="2"></th>
+        <th>Action</th>
       </tr>
     </thead>
 
     <tbody>
       <% @reviews.each do |review| %>
         <tr>
-          <td> <%= review.content %> </td>
+          <td> <%= link_to review.content, video_review_path(review.video, review) %> </td>
           <td> <%= review.video.title %> </td>
           <td> <%= review.updated_at %> </td>
-          <td> <%= link_to('Edit', edit_video_review_path(review.video, review), class: "btn btn-default btn-xs") %></td>
-          <td> <%= link_to('Delete', video_review_path(review.video, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+          <td>
+            <%= link_to video_review_path(review.video, review), class: "btn btn-floating pulse delete-favorite", method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="material-icons small">delete</i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
