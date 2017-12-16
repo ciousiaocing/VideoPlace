@@ -52,17 +52,22 @@ iframe {
 
 //nav
 #navbar {
-  background: inherit;
+  background: #fff;
   color: #00C1F9;
-  height: 0;
-  font-family: 'Lobster';
+  height: auto;
 
   .brand-logo{
     color: #00C1F9;
+    font-family: 'Lobster';
   }
 
   ul a {
     color: #00C1F9;
+  }
+
+  &.index_navbar_bgcolor {
+    background: red;
+    height: auto;
   }
 
   &.show_bgcolor {

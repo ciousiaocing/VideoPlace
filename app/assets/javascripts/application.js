@@ -19,11 +19,13 @@ $(document).ready(function(){
   //   $(this).toggleClass("change");
   // });
 
-  $(window).scroll(function(){
-    if($(this).scrollTop() > 420){
-      $('#navbar').addClass('show_bgcolor')
-    }else {
-      $('#navbar').removeClass('show_bgcolor')
-    }
-  })
+  function indexpage(
+    $(window).scroll(function(){
+      if($(this).scrollTop() < 420){
+        $('#navbar').addClass('index_navbar_bgcolor')
+      }else {
+        $('#navbar').removeClass('index_navbar_bgcolor')
+      }
+    })
+  );
 })
