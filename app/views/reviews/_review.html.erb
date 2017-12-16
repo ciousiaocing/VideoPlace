@@ -17,9 +17,9 @@
 
   <div class="review-delete">
   <% if review.user == current_user %>
- <%= link_to("Delete", account_review_path(review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+ <%= link_to("Delete", video_review_path(review.video, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
   <% end %>
   <br>
-<hr>
+<hr style="margin-top: 22px;">
 
   </div>

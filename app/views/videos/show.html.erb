@@ -29,11 +29,11 @@
         <% end %>
 
         <div class="row">
-        <div class="col s12">
+        <div class="col s12" style="margin-bottom: 10px;">
           <ul class="tabs tabs-color">
             <li class="tab col s4"><a href="#test1">標題</a></li>
-            <li class="tab col s4"><a class="active" href="#test2">描述</a></li>
-            <li class="tab col s4"><a href="#test3">評論( <%= @video.reviews.count %> )</a></li>
+            <li class="tab col s4"><a href="#test2">描述</a></li>
+            <li class="tab col s4"><a href="#test3" class="active">評論( <%= @video.reviews.count %> )</a></li>
           </ul>
         </div>
         <div id="test1" class="col s12"><%= @video.title %></div>

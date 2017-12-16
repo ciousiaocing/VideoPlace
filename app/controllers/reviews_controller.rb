@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   def create
     @video = Video.find_by(id: params[:video_id])
     @review = @video.reviews.new(review_params)
+    @review.video = @video
     @review.user = current_user
 
     if @review.save
@@ -12,10 +13,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @video = Video.find_by(id: params[:id])
+    @video = Video.find_by(id: params[:video_id])
     @review = Review.find_by(id: params[:id])
-    @review.destory
-    redirect_to video_path(@video)
+    @review.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private
