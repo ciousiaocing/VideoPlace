@@ -18,4 +18,12 @@ $(document).ready(function(){
   // $('.love-color').click(function(){
   //   $(this).toggleClass("change");
   // });
+
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 420){
+      $('#navbar').addClass('show_bgcolor')
+    }else {
+      $('#navbar').removeClass('show_bgcolor')
+    }
+  })
 })
