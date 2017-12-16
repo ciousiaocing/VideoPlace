@@ -46,10 +46,10 @@
       </div>
 
       </div>
-      <div class="card-action">
-        <a href="#">Previous</a>
+      <div class="card-action" style="height: 60px;">
+        <%= link_to "Previous", @prev_video if !@prev_video.nil? %>
         <span class="right">
-          <a href="#">Next</a>
+          <%= link_to "Next", @next_video if !@next_video.nil? %>
         </span>
       </div>
     </div>

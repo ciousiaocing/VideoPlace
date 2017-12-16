@@ -4,13 +4,17 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @video = Video.find_by(id: params[:id])
-    
+
     render layout: "rootnavbar"
   end
 
   def show
     @videos = Video.all
     @video = Video.find_by(id: params[:id])
+
+    @next_video = @video.next
+    @prev_video = @video.prev
+
   end
 
   def collect
