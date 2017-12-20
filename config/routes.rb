@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   root "videos#index"
+  get 'pages/contact'
 
   namespace :admin do
     resources :videos
